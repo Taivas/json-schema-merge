@@ -2,7 +2,7 @@ const _ = require('lodash');
 const Ajv = require('ajv');
 const ajv = new Ajv();
 
-// check if x contain's output values that y requires
+// merge y into x
 const merge = {
     schema(x, y, context = { path: '#' }) {
         if(_.isEmpty(x)) {
@@ -12,7 +12,7 @@ const merge = {
             return x || {};
         }
         const newContext = _.assign({}, context);
-        // validate JSON Schema at first time
+        // validate JSON Schema at the first level
         if (context.path === '#') {
             ajv.compile(x);
             ajv.compile(y);
@@ -21,7 +21,7 @@ const merge = {
         // parse $ref
         const parsedX = merge._parse(x, newContext.rootX);
         const parsedY = merge._parse(y, newContext.rootY);
-        // if is not empty Object
+        // if parsedY is not empty Object
         if(parsedY.type) {
             // if merge[parsedX.type] exist
             if(merge[parsedX.type]) {
