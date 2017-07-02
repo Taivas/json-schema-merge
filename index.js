@@ -52,7 +52,10 @@ const merge = {
         const { required: xr = [], definitions: xd = {}, properties: xp = {} } = x;
         const { required: yr = [], definitions: yd = {}, properties: yp = {} } = y;
         // merge required
-        mergedSchema.required = _.union(xr, yr);
+        const mergedRequired = _.union(xr, yr);
+        if (mergedRequired.length) {
+            mergedSchema.required = mergedRequired;
+        }
         // merge definitions
         const dk = _.union(_.keys(xd), _.keys(yd));
         for(const p of dk ) {

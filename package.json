@@ -1,16 +1,16 @@
 {
   "name": "json-schema-match",
   "version": "0.0.2",
-  "description": "A tool for comparing two json schemas.",
+  "description": "A tool for merging two json schemas.",
   "main": "index.js",
-  "author": "Daniel King",
+  "author": "Taivas",
   "license": "MIT",
   "dependencies": {
     "ajv": "^5.2.0",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "ava": "^0.19.1"
+    "ava": "^0.20.0"
   },
   "scripts": {
     "test": "ava"
