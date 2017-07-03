@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const Ajv = require('ajv');
 const ajv = new Ajv();
+ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
 
 // merge y into x
 const merge = {
