@@ -78,6 +78,9 @@ const merge = {
     number(x, y, context) {
         return y;
     },
+    integer(x, y, context) {
+        return y;
+    },
     array(x, y, context) {
         return y;
     },
