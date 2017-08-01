@@ -1,5 +1,5 @@
 {
-  "name": "json-schema-match",
+  "name": "json-schema-merge",
   "version": "0.0.5",
   "description": "A tool for merging two json schemas.",
   "main": "index.js",
