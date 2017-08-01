@@ -81,6 +81,9 @@ const merge = {
     integer(x, y, context) {
         return y;
     },
+    boolean(x, y, context) {
+        return y;
+    },
     array(x, y, context) {
         return y;
     },
